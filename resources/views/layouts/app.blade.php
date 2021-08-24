@@ -128,7 +128,6 @@
         .pg_hidden {
             display: none;
         }
-
     </style>
 
     <script type="text/javascript">
@@ -191,16 +190,14 @@
     <!-- Query library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
     <script>
-        $(function() {
-            // 6 create an instance when the DOM is ready
-            $('#jstree').jstree({
-                "plugins" : [ "themes", "html_data", "checkbox", "sort", "ui" ]
-            });
-            // 7 bind to events triggered on the tree
-            $('#jstree').on("changed.jstree", function(e, data) {
-                console.log(data.selected);
-            });
-        });
+        $('#using_json_2').jstree({ 'core' : {
+        'data' : [
+                   { "id" : "ajson1", "parent" : "#", "text" : "Simple root node" },
+                   { "id" : "ajson2", "parent" : "#", "text" : "Root node 2" },
+                   { "id" : "ajson3", "parent" : "ajson2", "text" : "Child 1" },
+                   { "id" : "ajson4", "parent" : "ajson2", "text" : "Child 2" },
+                ]
+        } });
     </script>
 </body>
 

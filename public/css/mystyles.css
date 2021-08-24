@@ -5,44 +5,86 @@
     position: fixed;
     height: 100%;
     overflow: auto;
-  }
-  
-  .sidebar-new  a {
+}
+.sidebar-new a {
     display: display;
     color: black;
-  }
-   
-  .sidebar-new  a.active {
+}
+.sidebar-new a.active {
     background-color: #04AA6D;
     color: white;
-  }
-  
+}
 /*
   .sidebar-new  a:hover:not(.active) {
     background-color: #555;
     color: white;
   } 
 */
-  
-  div.content {
+
+div.content {
     margin-left: 200px;
     padding: 1px 16px;
     height: 1000px;
-  }
-  
-  @media screen and (max-width: 700px) {
-    .sidebar-new  {
-      width: 100%;
-      height: auto;
-      position: relative;
+}
+@media screen and (max-width: 700px) {
+    .sidebar-new {
+        width: 100%;
+        height: auto;
+        position: relative;
     }
-    .sidebar-new  a {float: left;}
-    div.content {margin-left: 0;}
-  }
-  
-  @media screen and (max-width: 400px) {
-    .sidebar-new  a {
-      text-align: center;
-      float: none;
+    .sidebar-new a {
+        float: left;
     }
-  }
+    div.content {
+        margin-left: 0;
+    }
+}
+@media screen and (max-width: 400px) {
+    .sidebar-new a {
+        text-align: center;
+        float: none;
+    }
+}
+.sidenav-new li>a {
+    display: inline-block !important;
+}
+
+.context-menu { 
+  position: absolute; 
+  z-index: 999;
+} 
+.menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #CECECE;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgb(64 64 64 / 5%);
+  padding: 10px 0;
+}
+.menu > li > a {
+  font: inherit;
+  border: 0;
+  padding: 10px 30px 10px 15px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-decoration: unset;
+  color: #000;
+  font-weight: 500;
+  transition: 0.5s linear;
+  -webkit-transition: 0.5s linear;
+  -moz-transition: 0.5s linear;
+  -ms-transition: 0.5s linear;
+  -o-transition: 0.5s linear;
+}
+.menu > li > a:hover {
+  background:#ffffff;
+  color: #4b00ff;
+}
+.menu > li > a > i {
+  padding-right: 10px;
+}
+.menu > li.trash > a:hover {
+  color: red;
+}
